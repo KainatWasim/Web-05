@@ -1,0 +1,108 @@
+/* --- Base --- */
+* { box-sizing: border-box; }
+:root{
+  --bg1:#8406d2;   /* top gradient */
+  --bg2:#a7b8ff;   /* bottom gradient */
+  --panel-start:#5b3cf7; /* inner panel gradient */
+  --panel-end:#2aa5ff;
+  --card:#d9d9d9;
+  --text:#1f2937;
+}
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background: linear-gradient(180deg, var(--bg1), var(--bg2));
+}
+
+/* --- Header --- */
+.site-hero{
+     background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.site-hero h1{
+  margin:0;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+/* --- Section wrapper like screenshot --- */
+.wrap{
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 20px 40px;
+  background: linear-gradient(135deg, var(--panel-start), var(--panel-end));
+  border-radius: 16px;
+}
+
+.section-title{
+  text-align:center;
+  color:#555;
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 800;
+  margin: 24px 0 8px;
+}
+
+/* --- Cards grid --- */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 28px;
+  padding: 24px;
+}
+@media (max-width: 820px){
+  .cards{ grid-template-columns: 1fr; }
+}
+
+/* --- Single card --- */
+.card{
+  background: var(--card);
+  border-radius: 12px;
+  color:#555;
+  padding: 18px;
+}
+
+/* text left, image right inside card */
+.card-grid{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 16px;
+  align-items: center;
+}
+@media (max-width: 560px){
+  .card-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Card body --- */
+.card h3{
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+.tagline{
+  margin: 0 0 10px;
+  color:#586173;
+}
+.card h4{
+  margin: 6px 0 6px;
+}
+.card ul{
+  margin: 0;
+  padding-left: 18px;
+}
+
+/* --- Card image --- */
+.card-media{
+  margin:0;
+}
+.card-media img{
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  display:block;
+}
